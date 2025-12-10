@@ -1,0 +1,49 @@
+----------------------------------------------------------------
+Install Python and Jupyter notebook on Windows 10 Pro
+----------------------------------------------------------------
+Checking the python in Windows 10:
+
+In your Python interpreter, type the following commands:
+>>> import os
+>>> import sys
+>>> os.path.dirname(sys.executable)
+C:\\Users\\Kevin\\AppData\\Local\\Microsoft\\WindowsApps\\PythonSoftwareFoundation.Python.3.10_qbz5n2kfra8p0
+
+1. Check
+If you already installed python using Microsoft Store, then python will stay in a different folder as below:
+C:\Users\Kevin\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.10_qbz5n2kfra8p0\LocalCache\local-packages\Python310\Scripts
+
+In this case you should uninstall Python. You should rather download the newest python and install it by ourself.
+
+2. Install newest Python, and add new python to "Environment Variable"
+Download python-3.10.5-amd64.exe from python website (python.org)
+Python will be located in C:\Users\Kevin\AppData\Local\Programs\Python\Python310
+After installation, we should "Add Python to environment variables"
+Open the Start Search, type in “env”, and choose “Edit the system environment variables”: 
+Click "Environment Variables" button, goto the "System Variable", find the line "Path....", click edit button, add two more lines below:
+	C:\Users\Kevin\AppData\Local\Programs\Python\Python310\
+	C:\Users\Kevin\AppData\Local\Programs\Python\Python310\Scripts\
+Then restart the computer
+
+3. Installing Jupyter Notebook on windows 10 with PIP
+Go to the scripts folder in C:\Users\Kevin\AppData\Local\Programs\Python\Python310\Scripts, and run:
+
+If you get a WARNING:
+WARNING: You are using pip version 22.0.4; however, version 22.1.2 is available.
+You should consider upgrading via the 'C:\Users\Kevin\AppData\Local\Programs\Python\Python310\python.exe -m pip install --upgrade pip' command.
+
+Then, you should install upgrade pip:
+python -m pip install --upgrade pip
+
+To install jupyter notebook
+pip install jupyter
+or
+python -m pip install jupyter
+
+Run jupyter notebook
+jupyter notebook
+C:\Users\Kevin>jupyter notebook
+
+if you want to install Jupyterlab then do:
+pip install jupyterlab
+C:\Users\Kevin>jupyter lab
